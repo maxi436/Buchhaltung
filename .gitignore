@@ -1,0 +1,6 @@
+.venv
+src/__pycache__/
+
+formData.ts.txt
+
+src/pw.txt
