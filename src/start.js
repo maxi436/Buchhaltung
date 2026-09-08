@@ -23,9 +23,33 @@ async function diagrammLaden() {
         },
         options: {
             responsive: true,
+            font: {
+                family: "Trebuchet MS, sans-serif"
+            },
             plugins: {
                 legend: {
-                    display: true
+                    display: true,
+                    labels: {
+                        font: {
+                            family: "Trebuchet MS, sans-serif"
+                        }
+                    }
+                }
+            },
+            scales: {
+                x: {
+                    ticks: {
+                        font: {
+                            family: "Trebuchet MS, sans-serif"
+                        }
+                    }
+                },
+                y: {
+                    ticks: {
+                        font: {
+                            family: "Trebuchet MS, sans-serif"
+                        }
+                    }
                 }
             }
         }

@@ -21,3 +21,13 @@ form.addEventListener("submit", async (event) => {
 
     ausgabe.textContent = ergebnis;
 });
+
+const passwortInput = document.querySelector('input[name="passwort"]');
+
+function show() {
+    if (passwortInput.type === "password") {
+        passwortInput.type = "text";
+    } else {
+        passwortInput.type = "password";
+    }
+}

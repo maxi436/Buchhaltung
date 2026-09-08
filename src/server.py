@@ -16,6 +16,7 @@ def pruefen():
             return "true"
         else:
             return "false"
+
 @app.route("/start")
 def start():
     return send_from_directory(".", "start.html")
@@ -23,7 +24,6 @@ def start():
 @app.route("/daten")
 def daten():
     return send_from_directory(".", "chart_data.json", mimetype="application/json")
-
 
 if __name__ == "__main__":
     app.run(port=8000)

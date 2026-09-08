@@ -2,5 +2,6 @@
 src/__pycache__/
 
 formData.ts.txt
+chart_data.json
 
 src/pw.txt
