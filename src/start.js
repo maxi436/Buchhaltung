@@ -22,6 +22,10 @@ async function diagrammLaden() {
             datasets: [{
                 label: "Geld am Monatsende (€)",
                 data: daten.values,
+                borderColor: "#176b87",
+                backgroundColor: "rgba(23, 107, 135, 0.14)",
+                pointBackgroundColor: "#176b87",
+                pointBorderColor: "#176b87",
                 borderWidth: 2,
                 pointRadius: 1.5,
                 pointHoverRadius: 3,
