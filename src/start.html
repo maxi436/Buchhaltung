@@ -6,11 +6,18 @@
         <title>Start</title>
         <link rel="stylesheet" href="/style.css">
     </head>
+    <button onclick="back()">Zurück</button>
     <body>
         <h1>Start</h1>
         <canvas id="umsatzChart" width="400" height="200"></canvas>
+        
+        <br>
 
-        <button onclick="back()">Zurück</button>
+        <form id="eintrag">
+            <input value="2026-09" type="text" id="monat" name="monat" placeholder="Monat (YYYY-MM)" required>
+            <input type="number" id="betrag" name="betrag" placeholder="Betrag" step="0.01" required>
+            <button type="submit">Eintragen</button>
+        </form>
 
         <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
         <script src="/start.js"></script>

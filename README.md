@@ -46,8 +46,3 @@ python server.py
 ```
 
 Die Anwendung ist anschließend unter <http://127.0.0.1:8000> erreichbar.
-
-## Einrichtung
-
-Für die Anmeldung muss die Datei `src/pw.txt` vorhanden sein. Sie enthält das
-Passwort als eine einzelne Zeile.

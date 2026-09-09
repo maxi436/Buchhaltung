@@ -1,5 +1,7 @@
+let umsatzChart;
+
 async function diagrammLaden() {
-    const response = await fetch("/daten");
+    const response = await fetch("/monate");
 
     if (!response.ok) {
         throw new Error("Die Diagrammdaten konnten nicht geladen werden.");
@@ -7,8 +9,13 @@ async function diagrammLaden() {
 
     const daten = await response.json();
     const canvas = document.getElementById("umsatzChart");
+    console.log(daten);
 
-    new Chart(canvas, {
+    if (umsatzChart) {
+        umsatzChart.destroy();
+    }
+
+    umsatzChart = new Chart(canvas, {
         type: "line",
         data: {
             labels: daten.labels,
@@ -16,13 +23,14 @@ async function diagrammLaden() {
                 label: "Geld am Monatsende (€)",
                 data: daten.values,
                 borderWidth: 2,
-                pointRadius: 2,
+                pointRadius: 1.5,
                 pointHoverRadius: 3,
-                tension: 0.1
+                tension: 0.3
             }]
         },
         options: {
             responsive: true,
+            animation: false,
             font: {
                 family: "Trebuchet MS, sans-serif"
             },
@@ -56,10 +64,30 @@ async function diagrammLaden() {
     });
 }
 
-diagrammLaden().catch((error) => {
-    document.querySelector("h1").textContent = error.message;
-});
-
 function back(){
     window.location.href = "/";
 }
+
+const form = document.querySelector("#eintrag");
+
+form.addEventListener("submit", async (event) => {
+    event.preventDefault();
+
+    const daten = new FormData(form);
+
+    const response = await fetch("/eintrag", {
+        method: "POST",
+        body: daten
+    });
+
+    if (!response.ok) {
+        throw new Error(await response.text());
+    }
+
+    form.reset();
+    await diagrammLaden();
+});
+
+diagrammLaden().catch((error) => {
+    document.querySelector("h1").textContent = error.message;
+});

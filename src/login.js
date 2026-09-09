@@ -1,4 +1,4 @@
-const form = document.querySelector("#myForm");
+const form = document.querySelector("#login");
 const ausgabe = document.querySelector("#ausgabe");
 
 form.addEventListener("submit", async (event) => {
@@ -6,7 +6,7 @@ form.addEventListener("submit", async (event) => {
 
     const daten = new FormData(form);
 
-    const response = await fetch("/pruefen", {
+    const response = await fetch("/login", {
         method: "POST",
         body: daten
     });

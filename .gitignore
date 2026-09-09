@@ -1,7 +1,4 @@
 .venv
 src/__pycache__/
 
-formData.ts.txt
-src/chart_data.json
-
-src/pw.txt
+src/daten.db
