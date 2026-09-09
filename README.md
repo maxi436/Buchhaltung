@@ -46,3 +46,7 @@ python server.py
 ```
 
 Die Anwendung ist anschließend unter <http://127.0.0.1:8000> erreichbar.
+
+## Lizenz
+
+Dieses Projekt steht unter der [MIT-Lizenz](LICENSE).
